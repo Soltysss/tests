@@ -9,6 +9,7 @@ terraform {
 
 variable "scalr_host_name" {}
 variable "scalr_api_token" {}
+variable "blabla" {}
 
 
 provider "scalr" {
@@ -24,7 +25,7 @@ resource "scalr_variable" "example" {
 }
 
 resource "scalr_variable" "example2" {
-  key          = "my_key_name2"
+  key          = "my_key_name"
   value        = "my_value_name"
   category     = "shell"
   description  = "variable description"

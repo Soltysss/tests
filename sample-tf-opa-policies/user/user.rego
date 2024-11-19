@@ -16,6 +16,7 @@ get_basename(path) = basename{
     basename:= arr[count(arr)-1]
 }
 
+
 deny["User is not allowed to perform runs from Terraform CLI"] {
     "cli" == tfrun.source
     not array_contains(allowed_cli_users, tfrun.created_by.username)

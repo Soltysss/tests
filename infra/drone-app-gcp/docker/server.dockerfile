@@ -15,10 +15,10 @@ ENV GOOS=linux
 ENV GOARCH=amd64
 RUN go build -ldflags "-extldflags \"-static\"" -tags "nolimit"
 
-FROM alpine:3.11 as alpine
+FROM alpine:3.18.4 as alpine
 RUN apk add -U --no-cache ca-certificates
 
-FROM alpine:3.11
+FROM alpine:3.18.4
 EXPOSE 80 443
 VOLUME /data
 

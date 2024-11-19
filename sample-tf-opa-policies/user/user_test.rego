@@ -1,6 +1,5 @@
 package terraform
 
-
 test_cli_user_allowed {
     result = deny with input as data.mock.valid_cli_user
     count(result) == 0
@@ -25,3 +24,4 @@ test_vcs_user_not_aws {
     result = deny with input as data.mock.vcs_user_not_aws
     count(result) == 0
 }
+

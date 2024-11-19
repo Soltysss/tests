@@ -1,4 +1,4 @@
 resource "terraform_data" "that" {
-  count = 20
+  count = 30
   input = "something"
 }

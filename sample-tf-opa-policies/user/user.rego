@@ -34,3 +34,5 @@ deny["Only commits from authorized authors are allowed to trigger AWS infrastruc
     "aws" == provider_name
     not endswith(tfrun.vcs.commit.author.email, "-aws-ops@foo.bar")
 }
+
+

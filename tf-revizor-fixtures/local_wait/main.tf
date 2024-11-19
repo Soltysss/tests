@@ -3,15 +3,24 @@ variable "run_id" {
   default = "run-jyslljjfs84jsl111127777888"
 }
 
-
 variable "sleep_time" {
   default = 5
 }
+
+
+
+
+
+
+
+
+
 
 variable "sens" {
   default   = "xxxxxx"
   sensitive = true
 }
+
 
 resource "random_integer" "timeout" {
   min = 30
@@ -21,6 +30,11 @@ resource "random_integer" "timeout" {
     run_id = "Possibly sensitive ${var.run_id}!!"
   }
 }
+
+
+
+
+
 
 resource "null_resource" "wait" {
   triggers = {
@@ -51,6 +65,7 @@ output "test" {
   sensitive = true
 }
 
+
 output "senc_out" {
   value       = "xxxxxx"
   description = "my sensitive output"
@@ -65,6 +80,7 @@ output "module_res" {
 output "sleeped_for" {
   value = "${var.sleep_time} this is suppose to be sensitive"
 }
+
 
 output "run_id" {
   value = "${var.run_id} this is suppose to be sensitive. real value is 555555"

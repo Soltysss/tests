@@ -22,6 +22,8 @@ resource "random_integer" "timeout" {
   }
 }
 
+
+
 resource "null_resource" "wait" {
   triggers = {
       run_id = "This can be sensitive ${var.run_id}!"
@@ -36,6 +38,7 @@ resource "null_resource" "wait" {
      }
   }
 }
+
 
 module "local-wait" {
   source = "./modules/local-wait"
@@ -61,6 +64,8 @@ output "module_res" {
   value = "${module.local-wait.the_id} xxxxxx"
   sensitive = true
 }
+
+
 
 output "sleeped_for" {
   value = "${var.sleep_time} this is suppose to be sensitive"
